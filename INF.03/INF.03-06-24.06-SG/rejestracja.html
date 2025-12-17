@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+    <header>
+        <h1>Formularz rejestracyjny konferencji <em>Nasze Kwiaty</em></h1>
+    </header>
+    <main>
+        <section id="blok1" class="blok">
+            <h2>Dane osobowe</h2>
+            <input type="text" placeholder="Wpisz imię..." id="imie" required>
+            <input type="text" placeholder="Wpisz nazwisko..." id="nazwisko" required>
+            <button onclick="przejdzDoBloku(2)">Następna karta</button>
+        </section>
+        <section id="blok2" class="blok ukryty">
+            <h2>Dane kontaktowe</h2>
+            <input type="email" placeholder="Twój e-mail...">
+            <input type="tel" placeholder="Twój numer telefonu...">
+            <button onclick="przejdzDoBloku(3)">Następna karta</button>
+        </section>
+        <section id="blok3" class="blok ukryty">
+            <h2>Hasło do logowania</h2>
+            <input type="password" placeholder="Podaj hasło" id="haslo1">
+            <input type="password" placeholder="Powtórz hasło" id="haslo2">
+            <button onclick="zatwierdz()">Zatwierdź</button>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <video controls>
+                <source src="motyl.mp4">Przeglądarka nie obsługuje tego formatu</source>
+            </video>
+        </section>
+        <section>
+            <h3>Plan konferencji</h3>
+            <table>
+                <tr>
+                    <td>9:00 - 12:00</td>
+                    <td>Pielęgnacja roślin</td>
+                </tr>
+                <tr>
+                    <td>13:00 - 15:00</td>
+                    <td>Targi kwiatowe</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <p><a href="https://kwiaty.pl/">Internetowa kwiaciarnia</a></p>
+        </section>
+        <section>
+            <p>Formularz wykonał: XXXXXXXXXXXXXX</p>
+        </section>
+    </footer>
+    <script>
+        function przejdzDoBloku(nr){
+            const bloki = document.getElementsByClassName('blok')
+            for(let i =0; i<bloki.length; i++){
+                bloki[i].classList.add('ukryty')
+                
+            }
+            bloki[nr-1].classList.remove('ukryty')
+        }
+        function zatwierdz(){
+            const haslo1 = document.getElementById('haslo1').value
+            const haslo2 = document.getElementById('haslo2').value
+            const imie = document.getElementById('imie').value
+            const nazwisko = document.getElementById('nazwisko').value
+            if(haslo1 === haslo2){
+                console.log ("witaj " + imie + " "+ nazwisko)
+            }else{
+                alert ("Podaj poprawne hasło")
+            }
+        }
+        
+
+    </script>
+</body>
+
+</html>

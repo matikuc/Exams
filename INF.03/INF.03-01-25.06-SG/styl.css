@@ -1,0 +1,62 @@
+*{
+    font-family: Garamond;
+    color: white;
+    }
+    header{
+        background-color: indigo;
+        text-align: center;
+        padding: 2px;
+
+    }
+    #lewa, #prawa{
+        background-color: indigo;
+        height: 600px;
+
+    }
+    #srodek{
+        background-color: black;
+        height: 600px;
+        overflow: scroll;
+
+    }
+    @media (min-width: 800px){
+        main{
+            flex-direction: row;
+        }
+        #lewa,#prawa{
+            width: 20%;
+            float: left;
+        }
+        #srodek{
+            width: 60%;
+            float: left;
+        }
+    }
+    @media (max-width: 800px){
+        #lewa,#prawa,#srodek{
+            width: 100%;
+            float: none;
+        }
+    }   
+    footer{
+        background-color: indigo;
+        height: 150px;
+        clear: both;
+    }
+    .punkty{
+        background-color: tomato;
+        border-radius: 50%;
+        padding: 5px;
+    }
+    li{
+        padding: 5px;
+    }
+    .gra{
+        float: left;
+        text-align: center;
+        padding: 3px;
+    }
+    input{
+        margin: 10px;
+        color: indigo;
+    }

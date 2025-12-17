@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+
+<body>
+    <header>
+        <h2>Chat</h2>
+    </header>
+    <aside>
+        <h3>Chaty</h3>
+        <ul>
+            <li>Ogólny</li>
+            <li>Tematyczne
+                <ol>
+                    <li>Turystyczny</li>
+                    <li>Żeglarski</li>
+                    <li>Filatelistyczny</li>
+                    <li>Hodowla zwierzątek domowych</li>
+                </ol>
+            </li>
+        </ul>
+        <h3>Uczestnicy</h3>
+        <p>Jolanta Nowak</p>
+        <img src="Jolka.jpg" alt="Jolanta Nowak">
+        <p>Krzysztof Łukasiński</p>
+        <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+    </aside>
+    <main>
+        <section id="chat">
+            <div class="message jolanta">
+                <img src="Jolka.jpg" alt="Jolanta Nowak">
+                <p>Cześć idziesz jutro do kina?</p>
+            </div>
+            <div class="message krzysztof">
+                <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+                <p>Tak! A ty?</p>
+            </div>
+        </section>
+        <section class="inputArea">
+            <form>
+                <label for="messageInput">Wpisz wiadomość:</label>
+                <input type="text" id="messageInput">
+                <button type="button" onclick="sendMessage()">Wyślij</button>
+                <br>
+                <button type="button" onclick="generateRandomReply()">Generuj losową odpowiedź</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h5>Chat wykonał: XXXXXXXXXXXXXX</h5>
+    </footer>
+    <script>
+        const replies = [
+        "Świetnie!",
+        "Kto gra główną rolę?",
+        "Lubisz filmy Tego reżysera?",
+        "Będę 10 minut wcześniej",
+        "Może kupimy sobie popcorn?",
+        "Ja wolę Colę",
+        "Zaproszę jeszcze Grześka",
+        "Tydzień temu też byłem w kinie na Diunie",
+        "Ja funduję bilety"
+        ]
+        function sendMessage(){
+            const messageInput = document.getElementById("messageInput");
+            const messageText = messageInput.value;
+            const chat = document.getElementById("chat");
+            const newMessage = document.createElement('div');
+            newMessage.classList.add('message', 'jolanta');
+            newMessage.innerHTML = '<img src="Jolka.jpg" alt="Jolanta Nowak"><p>' + messageText + '</p>';
+            chat.appendChild(newMessage);
+            newMessage.scrollIntoView();
+            messageInput.value = ''; 
+        }
+        function generateRandomReply(){
+            const randomIndex = Math.floor(Math.random() * replies.length);
+            const repliesText = replies[randomIndex];
+            const chat = document.getElementById("chat");
+            const newReplies = document.createElement('div');
+            newReplies.classList.add('message', 'krzysztof');
+            newReplies.innerHTML = '<img src="Krzysiek.jpg" alt="Krzysztof Łukasiński"><p>' + repliesText + '</p>';
+            chat.appendChild(newReplies);
+            newReplies.scrollIntoView();
+            repliesInput.value = ''; 
+        }
+            
+    </script>
+</body>
+
+</html>
