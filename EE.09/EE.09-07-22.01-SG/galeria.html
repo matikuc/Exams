@@ -4,7 +4,7 @@
 	<meta charset="UTF-8" />
 	<title>Galeria</title>
 	<link rel="stylesheet" href="styl7.css" />
-	<script src="main.js"></script>
+	
 </head>
 <body>
 	<div id="baner">
@@ -39,7 +39,26 @@
 		<a href="https://pixabay.com" target="_blank">Odkryj więcej zdjęć</a>
 	</div>
 	<div id="stopka">
-		Autor: Chriskyy#0181
+		Autor: XXXXXXXXXXXXXXXXXXXx
 	</div>
+	<script>
+		function zmienImg(nazwaObrazka){
+			document.getElementById("zmiana").src=nazwaObrazka;
+
+		}
+		let zmiana = 0;
+		function polubZmien(){
+			
+			let img=document.getElementById("polub");
+			zmiana++;
+			if(zmiana%2==1){
+				img.src="icon-on.png";
+			}else{
+					img.src="icon-off.png";
+			}
+			}
+		
+
+	</script>
 </body>
 </html>
