@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Usługi fryzjerskie</title>
+	<link rel="stylesheet" href="styl2.css" />
+	
+</head>
+<body>
+	<header id="lewy1">
+		<h2><a href="index.html">SALON FRYZJERSKI</a></h2>
+		<img src="obraz2.jpg" alt="Czesanie" />
+	</header>
+	<header id="prawy1">
+		<h2>MENU</h2>
+	</header>
+	<section id="prawy2">
+		<ol>
+			<li><a href="fryzura.html">Strzyżenie</a>
+				<ul>
+					<li>krótkie</li>
+					<li>średnie</li>
+					<li>półdługie</li>
+					<li>długie</li>
+				</ul>
+			</li>
+			<li>Czesanie</li>
+			<li>Koloryzacja</li>
+		</ol>
+	</section>
+	<section id="lewy2">
+		<h3>Dziś promocja na strzyżenie włosów</h3>
+		<label>
+			<input type="radio" name="typ" id="krotkie" />
+			Krótkie<br/>
+		</label>
+		<label>
+			<input type="radio" name="typ" id="srednie" />
+			Średnie<br/>
+		</label>
+		<label>
+			<input type="radio" name="typ" id="poldlugie" />
+			Półdługie<br/>
+		</label>
+		<label>
+			<input type="radio" name="typ" id="dlugie" />
+			Długie<br/>
+		</label>
+		<button type="button" onclick="odkryj()">Odkryj promocję</button>
+		<p id="wynik"></p>
+	</section>
+	<section id="prawy3">
+		<img src="obraz1.jpg" alt="Fryzjer" />
+	</section>
+	<footer id="stopka">
+		<p>Autor: XXXXXXXXXXXXXXXX</p>
+	</footer>
+	<script>
+		function odkryj(){
+			let wynik = document.getElementById("wynik");
+			let cena = 0;
+			if(document.getElementById("krotkie").checked){
+				cena = 25
+				wynik.innerHTML = "Cena strzyżenia:" +cena;
+			}
+			if(document.getElementById("srednie").checked){
+				cena = 30
+				wynik.innerHTML = "Cena strzyżenia:" +cena;
+			}
+			if(document.getElementById("poldlugie").checked){
+				cena = 40
+				wynik.innerHTML = "Cena strzyżenia:" +cena;
+			}
+			if(document.getElementById("dlugie").checked){
+				cena = 50
+				wynik.innerHTML = "Cena strzyżenia:" +cena;
+			}
+			
+		}
+	</script>
+</body>
+</html>
