@@ -1,24 +1,35 @@
-*{
-    font-family: "Comic Sans MS",sans-serif;
+* {
+    font-family: 'Comic Sans MS', sans-serif;
     text-align: center;
 }
-nav,footer{
-    background-color: #00838F;
-    color: #B2DFDB;
+
+body {
+    margin: 0;
+}
+
+nav,
+footer {
+    background-color: #00838f;
+    color: #b2dfdb;
     padding: 10px;
 }
-main{
+
+main {
     display: flex;
 }
-aside,section{
+
+aside,
+section {
     width: 50%;
     height: 600px;
     overflow: auto;
 }
-aside{
+
+aside {
     background-color: #b2dfdb;
 }
-.wycieczka{
+
+.wycieczka {
     background-color: #00838fb3;
     height: 150px;
     margin-top: 10px;
@@ -26,27 +37,30 @@ aside{
     margin-left: 100px;
     margin-right: 100px;
     border-radius: 30px;
-    
-
 }
-.wycieczka:hover{
+
+.wycieczka:hover {
     background-color: #00838fff;
 }
-img{
+
+img {
     float: right;
     border-radius: 30px;
     margin: 7px;
 }
-li{
+
+li {
     display: inline-block;
     list-style-type: none;
 }
-a{
-    color: #B2DFDB;
+
+a {
+    color: #b2dfdb;
     text-decoration: none;
     margin-left: 50px;
 }
-a:hover{
+
+a:hover {
     color: white;
     text-decoration: underline;
 }
