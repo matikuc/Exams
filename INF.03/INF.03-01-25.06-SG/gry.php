@@ -17,8 +17,8 @@
             $connect = mysqli_connect('localhost', 'root', '', 'gry');
             $query = "SELECT nazwa, punkty FROM gry ORDER BY punkty DESC LIMIT 5;";
             $result = mysqli_query($connect, $query);
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<li>{$row['nazwa']} <span class='punkty'>{$row['punkty']}</span></li>";
+            while ($row = mysqli_fetch_array($result)) {
+                echo "<li>{$row['0']} <mark class='punkty'>{$row['1']}</mark></li>";
             }
             ?>
         </ul>
@@ -32,10 +32,10 @@
 $connect = mysqli_connect('localhost', 'root', '', 'gry');
 $query2 = "SELECT id, nazwa, zdjecie FROM gry;";
 $result2 = mysqli_query($connect, $query2);
-while ($row2 = mysqli_fetch_assoc($result2)) {
+while ($row2 = mysqli_fetch_array($result2)) {
     echo "<div class='gra'>";
-    echo "<img src='{$row2['zdjecie']}' alt='{$row2['id']}'><br>";
-    echo "{$row2['nazwa']}<br><br>";
+    echo "<img src='{$row2['2']}' alt='{$row2['0']}'><br>";
+    echo "{$row2['1']}<br><br>";
     echo "</div>";
 }
     ?>
@@ -69,8 +69,8 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
                 $connect = mysqli_connect('localhost', 'root', '', 'gry');
                 $query3 = "SELECT nazwa, LEFT(opis, 100) AS opis, punkty, cena FROM gry WHERE id = $id;";
                 $result3 = mysqli_query($connect, $query3);
-                if ($row3 = mysqli_fetch_assoc($result3)) {
-                    echo "<h2>{$row3['nazwa']}, {$row3['punkty']} punktów, {$row3['cena']} zł</h2>";
+                if ($row3 = mysqli_fetch_array($result3)) {
+                    echo "<h2>{$row3['0']}, {$row3['2']} punktów, {$row3['3']} zł</h2>";
                     echo "<p>{$row3['opis']}</p>";
                     
                 } }
@@ -88,8 +88,8 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
            VALUES ('$nazwa', '$opis', '$cena', '$zdjecie', 0);";
         mysqli_query($connect, $query4);
         header("location: gry.php");
-        mysqli_close($connect);
     }
+    mysqli_close($connect);
     ?>
     
 </body>
