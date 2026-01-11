@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Formularz rejestracyjny konferencji <em>Nasze Kwiaty</em></h1>
+    </header>
+    <main>
+        <section id="blok1">
+            <h2>dane osobowe</h2>
+                <input type="text" id="imie" placeholder="Wpisz imię..." required><br>
+                <input type="text" id="nazwisko" placeholder="Wpisz nazwisko..." required><br>
+                <button onclick="guzik1()">Następna karta</button>
+        </section>
+        <section id="blok2">
+                <h2>Dane kontaktowe</h2>
+                <input type="email" id="email" placeholder="Twój email..."><br>
+                <input type="tel" id="telefon" placeholder="Twój numer telefonu..."><br>
+                <button onclick="guzik2()">Następna karta</button>   
+        </section>
+        <section id="blok3">
+                <h2>Hasło do logowania</h2>
+                <input type="password" id="haslo1" placeholder="Powtórz hasło"><br>
+                <input type="password" id="haslo2" placeholder="Powtórz hasło"><br>
+                <button onclick="guzik3()">Zatwierdź</button>   
+    </section>
+    </main>
+    <footer>
+        <section><video src="motyl.mp4" controls>Przeglądarka nie obsługuje tego formatu</video></section>
+        <section>
+            <h3>Plan konferencji</h3>
+            <table>
+                <tr><td>9:00 - 12:00</td><td>Pielęgnacja roślin</td></tr>
+                <tr><td>13:00 - 15:00</td><td>Targi kwiatowe</td></tr>
+            </table>
+        </section>
+    <section><p><a href="https://kwiaty.pl/">Internetowa kwiaciarnia</a></p></section>
+    <section><p>Formularz wykonał: xxxxxxxxxx</p></section>
+    </footer>
+    <script>
+        function guzik1(){
+            document.getElementById('blok1').style.visibility = "hidden";
+            document.getElementById('blok2').style.visibility = "visible";
+            document.getElementById('blok3').style.visibility = "hidden";
+        }
+        function guzik2(){
+            document.getElementById('blok1').style.visibility = "hidden";
+            document.getElementById('blok2').style.visibility = "hidden";
+            document.getElementById('blok3').style.visibility = "visible";
+        }
+        function guzik3(){
+            let h1 = document.getElementById('haslo1').value;
+            let h2 = document.getElementById('haslo2').value;
+            let imie = document.getElementById('imie').value;
+            let nazwisko = document.getElementById('nazwisko').value;
+            if(h1==h2){
+                console.log('witaj '+imie+nazwisko);
+            }
+            else{
+                window.alert('Podane hasła różnią się');
+            }
+        }
+    </script>
+</body>
+</html>
